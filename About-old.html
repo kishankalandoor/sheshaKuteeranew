@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shesha Kuteera Resort | Exceptional Hospitality & Nature's Tranquility</title>
+    <meta name="description" content="Discover Shesha Kuteera Resort - where exceptional hospitality meets nature's tranquility. Located opposite Maha Ganapati Temple, just 500m from Kukke Subramanya Temple. Experience luxury with our timeless tradition of Atithi Devo Bhava.">
+    <meta name="keywords" content="shesha kuteera about, luxury resort kukke subramanya, hotel near temple, atithi devo bhava, nature resort karnataka">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4A574;
+            --dark-gold: #B8956A;
+            --accent-gold: #E8C794;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --bg-cream: #FAF9F7;
+            --bg-dark: #0F0F0F;
+            --white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.1);
+            --shadow-sharp: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --gradient-gold: linear-gradient(135deg, #D4A574 0%, #B8956A 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            --gradient-cream: linear-gradient(135deg, #FAF9F7 0%, #F5F4F0 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-gold) !important;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--gradient-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(45, 45, 45, 0.6)), url('images/hotel2.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            color: white;
+            z-index: 2;
+        }
+
+        .display-luxury {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #D4A574 0%, #E8C794 50%, #D4A574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lead-luxury {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .tradition-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 3rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-title {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .story-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 120px 0;
+            background: var(--gradient-cream);
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(212, 165, 116, 0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .value-description {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 120px 0;
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-gold);
+        }
+
+        .location-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .location-item:hover {
+            background: rgba(212, 165, 116, 0.1);
+            transform: translateX(10px);
+        }
+
+        .location-item i {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .location-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .location-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .location-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+        }
+
+        .team-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(212, 165, 116, 0.3);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .team-role {
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-description {
+            color: var(--text-light);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 100px 0;
+            background: var(--gradient-gold);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 100px 0;
+            background: var(--bg-cream);
+        }
+
+        .award-badge {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .award-badge:hover {
+            transform: translateY(-10px);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .award-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .award-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer-luxury {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #CCCCCC;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 165, 116, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #404040;
+            padding-top: 40px;
+            text-align: center;
+            color: #999999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .display-luxury {
+                font-size: 3rem;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-title {
+                font-size: 2.5rem;
+            }
+
+            .location-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-about {
+                height: 80vh;
+            }
+
+            .story-section,
+            .values-section,
+            .location-section,
+            .team-section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/1728235915478.png" alt="Shesha Kuteera Resort">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Rooms
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="suite1.html">Premium Suite</a></li>
+                            <li><a class="dropdown-item" href="Family-Room.html">Family Room</a></li>
+                            <li><a class="dropdown-item" href="Tripple-AC.html">Triple AC</a></li>
+                            <li><a class="dropdown-item" href="Double-AC.html">Double AC</a></li>
+                            <li><a class="dropdown-item" href="Home-Stay.html">Home Stay</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact-Us.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-luxury" data-aos="fade-up">Our Story</h1>
+                <p class="lead-luxury" data-aos="fade-up" data-aos-delay="200">
+                    Where exceptional hospitality meets nature's tranquility, creating unforgettable experiences in the heart of Kukke Subramanya
+                </p>
+                <p class="tradition-text" data-aos="fade-up" data-aos-delay="400">
+                    "We welcome you with the timeless Indian tradition of <strong>Atithi Devo Bhava</strong> - the guest is God"
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="u-align-left u-clearfix u-container-align-left u-container-align-right u-image u-section-1" id="sec-8301" data-image-width="1980" data-image-height="1437">
+      <div class="data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-size-25 u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h5 class="u-align-left u-custom-font u-text u-text-font u-text-palette-5-base u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Shesha Kuteera </h5>
+                <h1 class="u-align-left u-text u-text-body-alt-color u-text-2"> Lodge Comfort in Nature</h1>
+                <p class="u-align-left u-text u-text-body-alt-color u-text-3"> Shesha Kuteera offers a cozy lodge experience, blending comfort with the beauty of nature for a relaxing getaway</p>
+                <a href="https://www.booking.com/hotel/in/shesha-kuteera.html?aid=356980&amp;label=gog235jc-1FCAsobEIOc2hlc2hhLWt1dGVlcmFIM1gDaGyIAQGYATG4AQfIAQ_YAQHoAQH4AQKIAgGoAgO4ApTSlbgGwAIB0gIkOTg1YTM0MmUtM2ZiMC00OTJiLWFhMGYtMDkxZDdmNDY3ZDJk2AIF4AIB&amp;sid=0fcbf9282a6951550fb09fb73671aa74&amp;age=1&amp;checkin=2024-11-02&amp;checkout=2024-11-30&amp;dest_id=-2112019&amp;dest_type=city&amp;dist=0&amp;group_adults=3&amp;group_children=0&amp;hapos=1&amp;hpos=1&amp;no_rooms=1&amp;req_adults=3&amp;req_children=0&amp;room1=A%2CA%2CA&amp;sb_price_type=total&amp;soh=1&amp;sr_order=popularity&amp;srepoch=1728407838&amp;srpvid=8e0a798b3bf805da&amp;type=total&amp;ucfs=1&amp;activeTab=main" class="u-active-white u-align-left u-border-none u-btn u-button-style u-hover-white u-palette-3-base u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">start now</a>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-size-35 u-image-1" data-image-width="384" data-image-height="512">
+              <div class="u-container-layout u-valign-bottom u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-border-2 u-clearfix u-container-align-center u-white u-section-2" id="sec-20e8">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-align-center u-container-align-center u-container-style u-group u-shape-rectangle u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+          <div class="u-container-layout u-container-layout-1">
+            <h2 class="u-align-center u-border-2 u-text u-text-black u-text-1"> "What makes Shesha Kuteera unique?"</h2>
+            <p class="u-align-center u-large-text u-text u-text-variant u-text-2"> Transform Your Stay, Transform Your Experience. Shesha Kuteera has everything​ you need for a memorable getaway. Enjoy the tranquility of nature while indulging in our comfortable lodging and exceptional service.</p>
+          </div>
+        </div>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000" data-animation-direction="">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="images/1946788.png" alt=""></span>
+                <h4 class="u-align-center u-text u-text-3">lodging!</h4>
+                <p class="u-align-center u-text u-text-4"> &nbsp;Comfortable place to rest and recharge while away from home.</p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000" data-animation-direction="">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span class="u-align-center u-file-icon u-icon u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="images/2465349.png" alt=""></span>
+                <h4 class="u-align-center u-text u-text-5">near the temple! </h4>
+                <p class="u-align-center u-text u-text-6"> Only 1.5 kms away from the temple. </p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000" data-animation-direction="">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-align-center u-file-icon u-icon u-icon-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="images/1719653.png" alt=""></span>
+                <h4 class="u-align-center u-text u-text-7">city!</h4>
+                <p class="u-align-center u-text u-text-8"> Located in the city. </p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="1000" data-animation-direction="">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5"><span class="u-align-center u-file-icon u-icon u-icon-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="images/6009570.png" alt=""></span>
+                <h4 class="u-align-center u-text u-text-9">comfort! </h4>
+                <p class="u-align-center u-text u-text-10"> Provides a cozy atmosphere, ensuring guests feel relaxed and at home during their stay.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-3" id="carousel_f2b2">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-center u-container-align-center u-container-style u-image u-layout-cell u-size-24-lg u-size-24-xl u-size-60-md u-size-60-sm u-size-60-xs u-image-1" data-image-width="1024" data-image-height="683">
+                <div class="u-container-layout u-container-layout-1"></div>
+              </div>
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-size-36-lg u-size-36-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h3 class="u-align-left u-text u-text-1">Overview </h3>
+                  <p class="u-align-left u-text u-text-2"> Kukke Shree Subrahmanya temple is located in the village of Subrahmanya of Sullia Taluk in Dakshina Kannada District, Karnataka State. The main deity, Lord Karthikeya is worshipped as Sri Subrahmanya, the lord of all serpents. Kukke Subrahmanya is the abode of Nagas. Here pooja is offered to lord Subrahmanya merged with serpent king Vasuki. Hence, believed to be the ultimate solace for salvation from any sort of Naga Doshas.</p>
+                  <h3 class="u-align-left u-text u-text-3">About Us </h3>
+                  <p class="u-align-left u-text u-text-4"> Shesha Kuteera is a comfortable Luxury Budget Hotel located in Kukke Subrahmanya, near to the Kukke Subrahmanya Temple. The hotel prides itself in the convenience of location, comfort of facilities &amp; the service provided by its staff.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-shading u-section-4" id="sec-93ad" data-image-width="4160" data-image-height="3120">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-body-alt-color u-text-1"> "At Shesha Kuteera, our dedicated staff ensures a welcoming experience for every guest."</h2>
+      </div>
+    </section>
+    <section class="u-clearfix u-image u-section-5" id="sec-960a" data-image-width="512" data-image-height="342">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-left u-container-align-left u-container-style u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1"><span class="u-align-left u-icon u-icon-circle u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 409.294 409.294" style=""><use xlink:href="#svg-6c4a"></use></svg><svg class="u-svg-content" viewBox="0 0 409.294 409.294" id="svg-6c4a"><path d="m0 204.647v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941v-58.471c-96.728 0-175.412 78.684-175.412 175.412z"></path><path d="m409.294 87.706v-58.471c-96.728 0-175.412 78.684-175.412 175.412v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941z"></path></svg></span>
+            <p class="u-align-left u-text u-text-body-alt-color u-text-1"> "A cozy retreat with unmatched comfort and relaxation; your perfect getaway for a peaceful and enjoyable stay."</p>
+            <h5 class="u-align-left u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250"> Shesha Kuteera</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-6" id="sec-a3a5">
+      <div class="u-expanded-width u-hidden-xs u-palette-5-dark-3 u-shape u-shape-rectangle u-shape-1"></div>
+      <div class="data-layout-selected u-clearfix u-gutter-26 u-hidden-xs u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-size-15 u-size-30-md">
+              <div class="u-layout-col">
+                <div class="u-container-style u-image u-layout-cell u-size-40 u-image-1" data-image-width="384" data-image-height="512" data-animation-name="customAnimationIn" data-animation-duration="1500">
+                  <div class="u-container-layout u-container-layout-1"></div>
+                </div>
+                <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-2">
+                  <div class="u-container-layout u-container-layout-2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-15 u-size-30-md">
+              <div class="u-layout-col">
+                <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-3">
+                  <div class="u-container-layout u-container-layout-3"></div>
+                </div>
+                <div class="u-container-style u-image u-layout-cell u-size-40 u-image-2" data-image-width="513" data-image-height="768" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+                  <div class="u-container-layout u-container-layout-4"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-15 u-size-30-md">
+              <div class="u-layout-col">
+                <div class="u-container-style u-image u-layout-cell u-size-40 u-image-3" data-image-width="288" data-image-height="392" data-animation-name="customAnimationIn" data-animation-duration="1500">
+                  <div class="u-container-layout u-container-layout-5"></div>
+                </div>
+                <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-6">
+                  <div class="u-container-layout u-container-layout-6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-15 u-size-30-md">
+              <div class="u-layout-col">
+                <div class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-size-20 u-layout-cell-7">
+                  <div class="u-container-layout u-container-layout-7"></div>
+                </div>
+                <div class="u-container-style u-image u-layout-cell u-size-40 u-image-4" data-image-width="650" data-image-height="900" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+                  <div class="u-container-layout u-container-layout-8"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-style u-layout-cell u-right-cell u-size-25-lg u-size-30-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-9">
+              <div class="u-container-layout u-container-layout-9">
+                <h4 class="u-text u-text-default u-text-1"> Reserve Your Stay</h4>
+                <p class="u-custom-font u-font-montserrat u-text u-text-2"> "Reserve your stay with us and experience comfort and relaxation in every corner. Enjoy top-notch amenities and a welcoming ambiance designed just for you."</p>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30-xl u-size-35-lg u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-10">
+              <div class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-10">
+                <h2 class="u-text u-text-3"> Book your room!</h2>
+                <a href="#" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-hover-palette-3-base u-text-palette-1-base u-btn-1"> +91 70227 29211</a>
+                <a href="https://www.booking.com/hotel/in/shesha-kuteera.html?aid=356980&amp;label=gog235jc-1FCAsobEIOc2hlc2hhLWt1dGVlcmFIM1gDaGyIAQGYATG4AQfIAQ_YAQHoAQH4AQKIAgGoAgO4ApTSlbgGwAIB0gIkOTg1YTM0MmUtM2ZiMC00OTJiLWFhMGYtMDkxZDdmNDY3ZDJk2AIF4AIB&amp;sid=0fcbf9282a6951550fb09fb73671aa74&amp;age=1&amp;checkin=2024-11-02&amp;checkout=2024-11-30&amp;dest_id=-2112019&amp;dest_type=city&amp;dist=0&amp;group_adults=3&amp;group_children=0&amp;hapos=1&amp;hpos=1&amp;no_rooms=1&amp;req_adults=3&amp;req_children=0&amp;room1=A%2CA%2CA&amp;sb_price_type=total&amp;soh=1&amp;sr_order=popularity&amp;srepoch=1728407838&amp;srpvid=8e0a798b3bf805da&amp;type=total&amp;ucfs=1&amp;activeTab=main" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius u-btn-2" target="_blank"> Reserve Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-7688"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80"></section>
+  
+</body></html>

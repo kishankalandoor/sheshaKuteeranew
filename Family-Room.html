@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#D4A574">
+    <meta name="color-scheme" content="light">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Family Room - Shesha Kuteera | Luxury Heritage Resort</title>
+    <meta name="description" content="Experience our spacious Family Rooms - perfect for families with child-friendly amenities and comfortable accommodation at Shesha Kuteera Resort.">
+    <meta name="keywords" content="family room, spacious accommodation, kids friendly, family hotel, Shesha Kuteera">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/she.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/she.jpg">
+    <link rel="shortcut icon" href="images/she.jpg">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Premium Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Essential CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* === LUXURY HOTEL DESIGN SYSTEM === */
+        :root {
+            --primary-gold: #D4A574;
+            --primary-dark: #B8956A;
+            --accent-gold: #E8C794;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --bg-cream: #FAF9F7;
+            --bg-dark: #0F0F0F;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.1);
+            --shadow-sharp: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --gradient-gold: linear-gradient(135deg, #D4A574 0%, #B8956A 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === LUXURY NAVIGATION === */
+        .navbar-luxury {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px) saturate(150%);
+            -webkit-backdrop-filter: blur(10px) saturate(150%);
+        }
+
+        .navbar-luxury.scrolled {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.1);
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 0.75rem 0;
+        }
+
+        .navbar-brand-luxury {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .navbar-brand-luxury .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-luxury.scrolled .navbar-brand-luxury {
+            color: var(--text-dark) !important;
+        }
+
+        .navbar-luxury.scrolled .navbar-brand-luxury .logo-img {
+            filter: brightness(0) invert(0);
+        }
+
+        .navbar-brand-text {
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #f0f0f0 25%, 
+                #ffffff 50%, 
+                #e0e0e0 75%, 
+                #ffffff 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShiftNavbar 4s ease infinite;
+        }
+
+        .navbar-luxury.scrolled .navbar-brand-text {
+            background: linear-gradient(135deg, 
+                #667eea 0%, 
+                #764ba2 25%, 
+                #f093fb 50%, 
+                #f5576c 75%, 
+                #4facfe 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShiftNavbar 4s ease infinite;
+        }
+
+        @keyframes gradientShiftNavbar {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .nav-link-luxury {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.25rem !important;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-link-luxury:hover::before {
+            left: 0;
+        }
+
+        .nav-link-luxury:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-luxury.scrolled .nav-link-luxury {
+            color: var(--text-light) !important;
+        }
+
+        .navbar-luxury.scrolled .nav-link-luxury:hover {
+            color: white !important;
+        }
+
+        .btn-book-now {
+            background: var(--gradient-gold);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sharp);
+        }
+
+        .btn-book-now:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+            color: white;
+        }
+
+        /* === ROOM HERO SECTION === */
+        .room-hero {
+            min-height: 70vh;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.2) 50%,
+                rgba(0, 0, 0, 0.4) 100%
+            ), url('images/family1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .room-hero-content {
+            color: white;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .room-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #f0f0f0 25%, 
+                #ffffff 50%, 
+                #e0e0e0 75%, 
+                #ffffff 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShiftNavbar 4s ease infinite;
+        }
+
+        .room-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* === ROOM GALLERY === */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-sharp);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* === PREMIUM TYPOGRAPHY === */
+        .heading-lg {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .body-elegant {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .text-gold {
+            color: var(--primary-gold);
+        }
+
+        /* === AMENITIES GRID === */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-sharp);
+        }
+
+        .amenity-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* === BOOKING SECTION === */
+        .booking-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            padding: 120px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* === 360-DEGREE TOUR SECTION === */
+        .tour-360-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .tour-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 50px 0;
+        }
+
+        .tour-iframe {
+            width: 100%;
+            height: 640px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .tour-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tour-description p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .tour-iframe {
+                height: 400px;
+            }
+        }        .btn-booking {
+            background: white;
+            color: var(--primary-gold);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow-sharp);
+        }
+
+        .btn-booking:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+            color: var(--primary-gold);
+        }
+
+        /* === FOOTER === */
+        .footer-luxury {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--gradient-gold);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* === MOBILE OPTIMIZATIONS === */
+        @media (max-width: 768px) {
+            .room-hero {
+                min-height: 60vh;
+                background-attachment: scroll;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === SMOOTH ANIMATIONS === */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in-up.aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Luxury Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-luxury" id="mainNav">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand-luxury" href="index.html">
+                <img src="images/1728235915478.png" alt="Shesha Kuteera Logo" class="logo-img">
+                <span class="navbar-brand-text">Shesha Kuteera</span>
+            </a>
+
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-3"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="index.html#rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="index.html#amenities">Amenities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="index.html#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-luxury" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <a href="https://www.booking.com/hotel/in/shesha-kuteera.html" target="_blank" class="btn-book-now">
+                    <i class="bi bi-calendar-check"></i>
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Room Hero Section -->
+    <section class="room-hero">
+        <div class="container">
+            <div class="room-hero-content mx-auto" data-aos="fade-up">
+                <h1>Family Room</h1>
+                <p class="room-price">AC: ₹10,000 | Non-AC: ₹7,500<span class="fs-6 fw-normal">/night</span></p>
+                <p class="lead mb-4">Spacious family accommodation with child-friendly amenities and comfortable space for relaxation</p>
+                <a href="https://www.booking.com/hotel/in/shesha-kuteera.html" target="_blank" class="btn-booking">
+                    <i class="bi bi-calendar-check"></i>
+                    Book Family Room
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Room Gallery -->
+                    <div data-aos="fade-up">
+                        <h2 class="heading-lg mb-4">Family Room Gallery</h2>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="images/family1.jpg" alt="Family Room Main View" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/f2.jpg" alt="Family Room Bedroom" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/f4.jpg" alt="Family Room Living Area" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/f6.jpg" alt="Family Room Bathroom" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/f9.jpg" alt="Family Room Interior" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/f15.jpg" alt="Family Room View" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room Description -->
+                    <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="heading-lg mb-4">About Our Family Room</h3>
+                        <div class="body-elegant">
+                            <p class="mb-4">
+                                Our Family Room is thoughtfully designed to accommodate families with children, offering 
+                                spacious accommodation and child-friendly amenities. The room features extra bedding 
+                                options and a dedicated play area to keep little ones entertained while parents relax.
+                            </p>
+                            <p class="mb-4">
+                                With comfortable sleeping arrangements for the whole family, modern amenities, and safety 
+                                features designed with children in mind, our Family Room ensures a memorable and stress-free 
+                                stay for families of all sizes. Choose between our air-conditioned and non-air-conditioned 
+                                options based on your preferences and budget.
+                            </p>
+                            <p>
+                                The room includes child-safe furniture, extra storage space for family belongings, and easy 
+                                access to family-friendly facilities throughout the resort. Create lasting memories with 
+                                your loved ones in our comfortable and welcoming Family Room.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Room Info Card -->
+                    <div class="card border-0 shadow-lg sticky-top" style="top: 100px;" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4">Family Room Information</h4>
+                            
+                            <div class="mb-4">
+                                <h5 class="text-gold">Occupancy</h5>
+                                <p class="mb-2"><i class="bi bi-people me-2"></i>Family Size (4-6 People)</p>
+                                <p class="mb-2"><i class="bi bi-heart me-2"></i>Kids Friendly</p>
+                                <p class="mb-2"><i class="bi bi-person-plus me-2"></i>Extra Bed Available</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h5 class="text-gold">Room Features</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Large Family Space</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Child-Safe Furniture</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Play Area</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Extra Storage</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Modern Bathroom</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Safety Features</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                <h5 class="text-gold">Pricing Options</h5>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>AC Room:</span>
+                                    <strong class="text-gold">₹10,000/night</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Non-AC Room:</span>
+                                    <strong class="text-gold">₹7,500/night</strong>
+                                </div>
+                                <small class="text-muted">*Taxes and service charges applicable</small>
+                            </div>
+
+                            <a href="https://www.booking.com/hotel/in/shesha-kuteera.html" target="_blank" class="btn btn-lg w-100" style="background: var(--gradient-gold); color: white; border: none;">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Reserve Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="heading-lg">Family Room Amenities</h2>
+                <p class="body-elegant">Special amenities designed for families with children</p>
+            </div>
+
+            <div class="amenities-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-house-heart"></i>
+                    </div>
+                    <h5>Child-Safe Environment</h5>
+                    <p class="text-muted">Room designed with child safety in mind, featuring rounded corners and safe furniture.</p>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-controller"></i>
+                    </div>
+                    <h5>Play Area</h5>
+                    <p class="text-muted">Dedicated play space for children with games and entertainment options.</p>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-bed"></i>
+                    </div>
+                    <h5>Extra Bedding</h5>
+                    <p class="text-muted">Additional bedding options and extra beds available for larger families.</p>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-bag"></i>
+                    </div>
+                    <h5>Extra Storage</h5>
+                    <p class="text-muted">Ample storage space for family belongings and children's items.</p>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-wifi"></i>
+                    </div>
+                    <h5>Family Entertainment</h5>
+                    <p class="text-muted">High-speed WiFi and entertainment options for family time.</p>
+                </div>
+
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5>24/7 Support</h5>
+                    <p class="text-muted">Round-the-clock support for families with special assistance for children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 360-Degree Tour Section -->
+    <section class="tour-360-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 class="gradient-text">Virtual 360° Room Tour</h2>
+                <p>Experience our Family Room virtually and explore every detail from the comfort of your home</p>
+            </div>
+            
+            <div class="tour-container" data-aos="fade-up" data-aos-delay="200">
+                <iframe width="100%" height="640" frameborder="0" 
+                    allow="xr-spatial-tracking; gyroscope; accelerometer" 
+                    allowfullscreen scrolling="no" 
+                    src="https://kuula.co/share/collection/7ZP7J?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+                    class="tour-iframe">
+                </iframe>
+            </div>
+            
+            <div class="tour-description" data-aos="fade-up" data-aos-delay="400">
+                <p>Take a virtual walk through our Family Room and see the spacious layout, comfortable amenities, and child-friendly features that make it perfect for your family stay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="heading-lg mb-4">Perfect for Family Getaways</h2>
+                <p class="lead mb-4">Book your Family Room today and create wonderful memories with your loved ones</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://www.booking.com/hotel/in/shesha-kuteera.html" target="_blank" class="btn-booking">
+                        <i class="bi bi-calendar-check"></i>
+                        Book Now on Booking.com
+                    </a>
+                    <a href="tel:+91 70227 29211" class="btn-booking">
+                        <i class="bi bi-telephone"></i>
+                        Call Us: +91 70227 29211
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">Shesha Kuteera</div>
+                    <p class="body-elegant text-white-50 mb-4">
+                        Experience luxury and comfort in the heart of nature. Your perfect getaway awaits.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <div class="footer-links">
+                        <p><a href="index.html">Home</a></p>
+                        <p><a href="index.html#rooms">Rooms</a></p>
+                        <p><a href="index.html#amenities">Amenities</a></p>
+                        <p><a href="index.html#gallery">Gallery</a></p>
+                        <p><a href="index.html#contact">Contact</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-3">Room Types</h5>
+                    <div class="footer-links">
+                        <p><a href="suite1.html">Premium Suite</a></p>
+                        <p><a href="Family-Room.html">Family Rooms</a></p>
+                        <p><a href="Tripple-AC.html">Triple Rooms</a></p>
+                        <p><a href="Double-AC.html">Double Rooms</a></p>
+                        <p><a href="Home-Stay.html">Home Stay</a></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-3">Contact Info</h5>
+                    <div class="footer-links">
+                        <p><i class="bi bi-geo-alt me-2"></i>Kukke Subramanya Road, Subramanya, Karnataka 574238</p>
+                        <p><i class="bi bi-phone me-2"></i>+91 70227 29211</p>
+                        <p><i class="bi bi-envelope me-2"></i>info@sheshakuteera.com</p>
+                        <p><i class="bi bi-clock me-2"></i>24/7 Service Available</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4 border-white-50">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">&copy; 2024 Shesha Kuteera. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#" class="me-3">Privacy Policy</a>
+                        <a href="#" class="me-3">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shesha Kuteera Resort | Exceptional Hospitality & Nature's Tranquility</title>
+    <meta name="description" content="Discover Shesha Kuteera Resort - where exceptional hospitality meets nature's tranquility. Located opposite Maha Ganapati Temple, just 500m from Kukke Subramanya Temple. Experience luxury with our timeless tradition of Atithi Devo Bhava.">
+    <meta name="keywords" content="shesha kuteera about, luxury resort kukke subramanya, hotel near temple, atithi devo bhava, nature resort karnataka">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4A574;
+            --dark-gold: #B8956A;
+            --accent-gold: #E8C794;
+            --text-dark: #1A1A1A;
+            --text-light: #666666;
+            --text-muted: #999999;
+            --bg-cream: #FAF9F7;
+            --bg-dark: #0F0F0F;
+            --white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.1);
+            --shadow-sharp: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --gradient-gold: linear-gradient(135deg, #D4A574 0%, #B8956A 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            --gradient-cream: linear-gradient(135deg, #FAF9F7 0%, #F5F4F0 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin: 0 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--gradient-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(45, 45, 45, 0.6)), url('images/hotel2.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            color: white;
+            z-index: 2;
+        }
+
+        .display-luxury {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #D4A574 0%, #E8C794 50%, #D4A574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lead-luxury {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .tradition-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 3rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-title {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .story-text {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 120px 0;
+            background: var(--gradient-cream);
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(212, 165, 116, 0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .value-description {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 120px 0;
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-gold);
+        }
+
+        .location-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .location-item:hover {
+            background: rgba(212, 165, 116, 0.1);
+            transform: translateX(10px);
+        }
+
+        .location-item i {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .location-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .location-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .location-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+        }
+
+        .team-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(212, 165, 116, 0.3);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .team-role {
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-description {
+            color: var(--text-light);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 100px 0;
+            background: var(--gradient-gold);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 100px 0;
+            background: var(--bg-cream);
+        }
+
+        .award-badge {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .award-badge:hover {
+            transform: translateY(-10px);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .award-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .award-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer-luxury {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #CCCCCC;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 165, 116, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #404040;
+            padding-top: 40px;
+            text-align: center;
+            color: #999999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .display-luxury {
+                font-size: 3rem;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-title {
+                font-size: 2.5rem;
+            }
+
+            .location-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-about {
+                height: 80vh;
+            }
+
+            .story-section,
+            .values-section,
+            .location-section,
+            .team-section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/1728235915478.png" alt="Shesha Kuteera Resort">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Rooms
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="suite1.html">Premium Suite</a></li>
+                            <li><a class="dropdown-item" href="Family-Room.html">Family Room</a></li>
+                            <li><a class="dropdown-item" href="Tripple-AC.html">Triple AC</a></li>
+                            <li><a class="dropdown-item" href="Double-AC.html">Double AC</a></li>
+                            <li><a class="dropdown-item" href="Home-Stay.html">Home Stay</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact-Us.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-luxury" data-aos="fade-up">Our Story</h1>
+                <p class="lead-luxury" data-aos="fade-up" data-aos-delay="200">
+                    Where exceptional hospitality meets nature's tranquility, creating unforgettable experiences in the heart of Kukke Subramanya
+                </p>
+                <p class="tradition-text" data-aos="fade-up" data-aos-delay="400">
+                    "We welcome you with the timeless Indian tradition of <strong>Atithi Devo Bhava</strong> - the guest is God"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content" data-aos="fade-up">
+                <h2 class="story-title">A Legacy of Excellence</h2>
+                <p class="story-text">
+                    Nestled in the serene embrace of Kukke Subramanya, Shesha Kuteera stands as a beacon of luxury and comfort. Our journey began with a simple vision: to create a sanctuary where modern luxury meets traditional Indian hospitality. Located opposite the sacred Maha Ganapati Temple and just 500 meters from the revered Kukke Subramanya Temple, we offer our guests not just accommodation, but a spiritual and cultural experience.
+                </p>
+                <p class="story-text">
+                    Every corner of our resort reflects our commitment to excellence, from our meticulously designed rooms to our world-class amenities. We believe that every guest deserves to be treated with the utmost respect and care, embodying the ancient Indian philosophy of "Atithi Devo Bhava" - treating guests as divine beings.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Our Values</h2>
+                <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">The principles that guide every aspect of our service and hospitality</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-om"></i>
+                        </div>
+                        <h4 class="value-title">Atithi Devo Bhava</h4>
+                        <p class="value-description">We honor the ancient Indian tradition of treating every guest as a divine being, ensuring unparalleled hospitality and respect.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="value-title">Nature Harmony</h4>
+                        <p class="value-description">Our resort is designed to blend seamlessly with the natural beauty of the Western Ghats, preserving the environment we cherish.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4 class="value-title">Luxury Standards</h4>
+                        <p class="value-description">Every detail is crafted to meet the highest standards of luxury, ensuring comfort and elegance in every experience.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="value-title">Genuine Care</h4>
+                        <p class="value-description">Our team is dedicated to anticipating your needs and creating memorable moments that last a lifetime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-content" data-aos="fade-right">
+                    <h2>Perfect Location</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">Strategically positioned in the spiritual heart of Karnataka</p>
+                    
+                    <div class="location-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Opposite Maha Ganapati Temple</strong><br>
+                            <span style="opacity: 0.8;">Prime spiritual location with divine blessings</span>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <i class="fas fa-walking"></i>
+                        <div>
+                            <strong>500m to Kukke Subramanya Temple</strong><br>
+                            <span style="opacity: 0.8;">Just a 5-minute walk to the sacred temple</span>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <i class="fas fa-mountain"></i>
+                        <div>
+                            <strong>Western Ghats Proximity</strong><br>
+                            <span style="opacity: 0.8;">Surrounded by lush green hills and natural beauty</span>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <strong>Easy Accessibility</strong><br>
+                            <span style="opacity: 0.8;">Well-connected to major cities and transportation hubs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-image" data-aos="fade-left">
+                    <img src="images/temple2.jpg" alt="Temple Location">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up">
+                        <span class="stat-number">15+</span>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Luxury Rooms</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="stat-number">10,000+</span>
+                        <div class="stat-label">Happy Guests</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Premium Service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recognition & Awards</h2>
+                <p style="font-size: 1.2rem; color: var(--text-light);">Our commitment to excellence has been recognized by industry leaders</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="award-badge">
+                        <div class="award-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="award-title">Booking.com Excellence</h4>
+                        <p class="award-description">Excellent Category Hotel with outstanding guest reviews</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="award-badge">
+                        <div class="award-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="award-title">Eco-Friendly Resort</h4>
+                        <p class="award-description">Committed to sustainable tourism and environmental conservation</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="award-badge">
+                        <div class="award-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="award-title">Guest Choice Award</h4>
+                        <p class="award-description">Recognized for exceptional hospitality and guest satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="award-badge">
+                        <div class="award-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="award-title">Safety Standards</h4>
+                        <p class="award-description">Certified for maintaining highest safety and hygiene protocols</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Meet Our Team</h2>
+                <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">Dedicated professionals committed to making your stay extraordinary</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="team-image">
+                            <img src="images/staff.jpg" alt="Management Team">
+                        </div>
+                        <h4 class="team-name">Resort Management</h4>
+                        <p class="team-role">Leadership Team</p>
+                        <p class="team-description">Our experienced management team ensures every aspect of your stay exceeds expectations through meticulous attention to detail.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="team-image">
+                            <img src="images/reception2.jpg" alt="Guest Services">
+                        </div>
+                        <h4 class="team-name">Guest Services</h4>
+                        <p class="team-role">Hospitality Excellence</p>
+                        <p class="team-description">Our front desk team is available 24/7 to assist with all your needs, embodying true Indian hospitality.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                        <div class="team-image">
+                            <img src="images/lobby3.jpg" alt="Housekeeping">
+                        </div>
+                        <h4 class="team-name">Housekeeping</h4>
+                        <p class="team-role">Pristine Comfort</p>
+                        <p class="team-description">Our dedicated housekeeping team maintains the highest standards of cleanliness and comfort in every room.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Shesha Kuteera Resort</h4>
+                    <p>Experience luxury in the heart of nature's beauty. Located opposite Maha Ganapati Temple, just 500m from Kukke Subramanya Temple.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="About.html">About Us</a></p>
+                    <p><a href="Gallery.html">Gallery</a></p>
+                    <p><a href="Contact-Us.html">Contact</a></p>
+                    <p><a href="#">Privacy Policy</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rooms & Suites</h4>
+                    <p><a href="suite1.html">Premium Suite</a></p>
+                    <p><a href="Family-Room.html">Family Room</a></p>
+                    <p><a href="Tripple-AC.html">Triple AC</a></p>
+                    <p><a href="Double-AC.html">Double AC</a></p>
+                    <p><a href="Home-Stay.html">Home Stay</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Kukke Subramanya Road, Subramanya, Karnataka 574238</p>
+                    <p><i class="fas fa-phone me-2"></i>+91 70227 29211</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@sheshakuteera.com</p>
+                    <p><i class="fas fa-clock me-2"></i>Open 24x7 | Checkout: 2PM</p>
+                    <p><a href="https://www.booking.com/hotel/in/shesha-kuteera.html" target="_blank"><i class="fas fa-star me-2"></i>Book on Booking.com - Excellent Category Hotel</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shesha Kuteera Resort. All rights reserved. | Designed with luxury in mind | Booking.com Excellent Category Hotel</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent.replace(/[^\d]/g, '');
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
