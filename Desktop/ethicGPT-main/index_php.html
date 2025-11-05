@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthicBot Enhanced - PHP Version</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_php.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-robot"></i> EthicBot PHP</h2>
+                <p class="version">v3.0 - Synchronous</p>
+            </div>
+            
+            <div class="provider-section">
+                <h3>AI Providers</h3>
+                <div class="provider-options">
+                    <div class="provider-option active" data-provider="local" onclick="switchProvider('local')">
+                        <i class="fas fa-home"></i>
+                        <span>Local Mode</span>
+                    </div>
+                    <div class="provider-option" data-provider="openai" onclick="switchProvider('openai')">
+                        <i class="fas fa-brain"></i>
+                        <span>OpenAI GPT-4</span>
+                    </div>
+                    <div class="provider-option" data-provider="gemini" onclick="switchProvider('gemini')">
+                        <i class="fas fa-star"></i>
+                        <span>Google Gemini</span>
+                    </div>
+                    <div class="provider-option" data-provider="anthropic" onclick="switchProvider('anthropic')">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Anthropic Claude</span>
+                    </div>
+                    <div class="provider-option" data-provider="meta" onclick="switchProvider('meta')">
+                        <i class="fab fa-meta"></i>
+                        <span>Meta Llama</span>
+                    </div>
+                    <div class="provider-option" data-provider="cohere" onclick="switchProvider('cohere')">
+                        <i class="fas fa-lightning-bolt"></i>
+                        <span>Cohere</span>
+                    </div>
+                    <div class="provider-option" data-provider="huggingface" onclick="switchProvider('huggingface')">
+                        <i class="fas fa-smile"></i>
+                        <span>Hugging Face</span>
+                    </div>
+                    <div class="provider-option" data-provider="public" onclick="switchProvider('public')">
+                        <i class="fas fa-globe"></i>
+                        <span>Public APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topics-section">
+                <h3>Quick Topics</h3>
+                <div class="topic-cards">
+                    <div class="topic-card" onclick="sendPredefinedMessage('What is artificial intelligence?')">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI Definitions</h4>
+                        <p>Learn core AI concepts</p>
+                    </div>
+                    <div class="topic-card" onclick="sendPredefinedMessage('Define bias in AI')">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>AI Bias & Fairness</h4>
+                        <p>Understanding algorithmic bias</p>
+                    </div>
+                    <div class="topic-card" onclick="sendPredefinedMessage('Explain AI transparency')">
+                        <i class="fas fa-eye"></i>
+                        <h4>AI Transparency</h4>
+                        <p>Explainable AI principles</p>
+                    </div>
+                    <div class="topic-card" onclick="sendPredefinedMessage('Tell me about IEEE 2857')">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>IEEE Standards</h4>
+                        <p>Industry best practices</p>
+                    </div>
+                    <div class="topic-card" onclick="sendPredefinedMessage('What is AI privacy?')">
+                        <i class="fas fa-lock"></i>
+                        <h4>AI Privacy</h4>
+                        <p>Data protection in AI</p>
+                    </div>
+                    <div class="topic-card" onclick="sendPredefinedMessage('Define machine learning')">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Machine Learning</h4>
+                        <p>ML fundamentals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <button class="settings-btn" onclick="openAPIConfig()">
+                    <i class="fas fa-cog"></i> API Settings
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="chat-header">
+                <h1>AI Ethics Assistant - PHP Edition</h1>
+                <p class="current-provider">Using: <span id="providerName">Local Mode</span></p>
+            </div>
+            
+            <div class="chat-container" id="chatContainer">
+                <!-- Messages will be populated here -->
+            </div>
+            
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ask about AI ethics, definitions, IEEE standards..." 
+                        rows="1"
+                        onkeypress="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button id="sendBtn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Configuration Modal -->
+    <div id="apiConfigModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>API Configuration</h2>
+                <span class="close" onclick="closeAPIConfig()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Configure your API keys to enable enhanced AI responses:</p>
+                
+                <div class="api-config-section">
+                    <label for="openaiKey">OpenAI API Key:</label>
+                    <input type="password" id="openaiKey" placeholder="sk-...">
+                    <button onclick="saveAPIKey('openai')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="api-config-section">
+                    <label for="geminiKey">Google Gemini API Key:</label>
+                    <input type="password" id="geminiKey" placeholder="AI...">
+                    <button onclick="saveAPIKey('gemini')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="api-config-section">
+                    <label for="anthropicKey">Anthropic API Key:</label>
+                    <input type="password" id="anthropicKey" placeholder="sk-ant-...">
+                    <button onclick="saveAPIKey('anthropic')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="api-config-section">
+                    <label for="metaKey">Meta API Key:</label>
+                    <input type="password" id="metaKey" placeholder="your-meta-key...">
+                    <button onclick="saveAPIKey('meta')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="api-config-section">
+                    <label for="cohereKey">Cohere API Key:</label>
+                    <input type="password" id="cohereKey" placeholder="your-cohere-key...">
+                    <button onclick="saveAPIKey('cohere')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="api-config-section">
+                    <label for="huggingfaceKey">Hugging Face API Key:</label>
+                    <input type="password" id="huggingfaceKey" placeholder="hf_...">
+                    <button onclick="saveAPIKey('huggingface')" class="save-btn">Save</button>
+                </div>
+                
+                <div class="modal-footer">
+                    <p><strong>Note:</strong> API keys are stored in your session and are not persistent. Local mode works without any API keys.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <script>
+        let currentProvider = 'local';
+        let isProcessing = false;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('EthicBot PHP Edition initialized');
+            loadChatHistory();
+            
+            // Welcome message from PHP backend
+            sendWelcomeMessage();
+        });
+
+        async function sendWelcomeMessage() {
+            try {
+                const response = await fetch('ethicbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'send_message',
+                        message: 'hello'
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    addMessage('assistant', data.formatted);
+                }
+            } catch (error) {
+                console.error('Error sending welcome message:', error);
+                addMessage('assistant', 'Welcome to EthicBot Enhanced PHP Edition! I\'m ready to help you explore AI ethics.');
+            }
+        }
+
+        async function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            
+            if (message === '' || isProcessing) {
+                return;
+            }
+            
+            isProcessing = true;
+            showLoadingIndicator();
+            
+            // Add user message to UI
+            addMessage('user', message);
+            messageInput.value = '';
+            
+            try {
+                const response = await fetch('ethicbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'send_message',
+                        message: message
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    addMessage('assistant', data.formatted);
+                } else {
+                    addMessage('assistant', 'Sorry, I encountered an error processing your request.');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                addMessage('assistant', 'Connection error. Please check your internet connection and try again.');
+            } finally {
+                isProcessing = false;
+                hideLoadingIndicator();
+            }
+        }
+
+        async function switchProvider(provider) {
+            if (isProcessing) return;
+            
+            currentProvider = provider;
+            updateProviderDisplay();
+            
+            try {
+                const response = await fetch('ethicbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'switch_provider',
+                        provider: provider
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    addMessage('assistant', formatMessage(data.message));
+                }
+            } catch (error) {
+                console.error('Error switching provider:', error);
+            }
+        }
+
+        function updateProviderDisplay() {
+            // Update active provider in sidebar
+            document.querySelectorAll('.provider-option').forEach(el => {
+                el.classList.remove('active');
+                if (el.dataset.provider === currentProvider) {
+                    el.classList.add('active');
+                }
+            });
+            
+            // Update provider name in header
+            const providerNames = {
+                'local': 'Local Mode',
+                'openai': 'OpenAI GPT-4',
+                'gemini': 'Google Gemini',
+                'anthropic': 'Anthropic Claude',
+                'meta': 'Meta Llama',
+                'cohere': 'Cohere',
+                'huggingface': 'Hugging Face',
+                'public': 'Public APIs'
+            };
+            
+            document.getElementById('providerName').textContent = providerNames[currentProvider] || currentProvider;
+        }
+
+        function addMessage(sender, content) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.innerHTML = content;
+            
+            messageDiv.appendChild(contentDiv);
+            chatContainer.appendChild(messageDiv);
+            
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function formatMessage(content) {
+            return content
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\n/g, '<br>')
+                .replace(/^• (.+)/gm, '<div class="bullet-point">• $1</div>');
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        function sendPredefinedMessage(messageText) {
+            const messageInput = document.getElementById('messageInput');
+            messageInput.value = messageText;
+            sendMessage();
+        }
+
+        function showLoadingIndicator() {
+            document.getElementById('loadingIndicator').style.display = 'flex';
+        }
+
+        function hideLoadingIndicator() {
+            document.getElementById('loadingIndicator').style.display = 'none';
+        }
+
+        // API Configuration Functions
+        function openAPIConfig() {
+            document.getElementById('apiConfigModal').style.display = 'block';
+        }
+
+        function closeAPIConfig() {
+            document.getElementById('apiConfigModal').style.display = 'none';
+        }
+
+        async function saveAPIKey(provider) {
+            const input = document.getElementById(provider + 'Key');
+            const apiKey = input.value.trim();
+            
+            if (!apiKey) {
+                alert('Please enter an API key');
+                return;
+            }
+            
+            try {
+                const response = await fetch('ethicbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'save_api_key',
+                        provider: provider,
+                        api_key: apiKey
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert('API key saved successfully!');
+                    input.value = '';
+                } else {
+                    alert('Error saving API key');
+                }
+            } catch (error) {
+                console.error('Error saving API key:', error);
+                alert('Connection error while saving API key');
+            }
+        }
+
+        async function loadChatHistory() {
+            try {
+                const response = await fetch('ethicbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'get_chat_history'
+                    })
+                });
+
+                const data = await response.json();
+                if (data.success && data.history) {
+                    data.history.forEach(msg => {
+                        if (msg.sender && msg.content) {
+                            addMessage(msg.sender, formatMessage(msg.content));
+                        }
+                    });
+                    
+                    if (data.current_provider) {
+                        currentProvider = data.current_provider;
+                        updateProviderDisplay();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading chat history:', error);
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('apiConfigModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "ethicgpt-backend",
+  "version": "1.0.0",
+  "description": "Backend server for EthicGPT AI Ethics Assistant",
+  "main": "server_enhanced.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server_enhanced.js",
+    "dev": "nodemon server_enhanced.js",
+    "test": "jest"
+  },
+  "keywords": ["ai", "ethics", "chatbot", "node.js"],
+  "author": "EthicGPT Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.16.1",
+    "express-rate-limit": "^6.10.0",
+    "express-validator": "^7.0.1",
+    "socket.io": "^4.7.2",
+    "csv-parser": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "compression": "^1.7.4",
+    "nodemon": "^3.1.10",
+    "openai": "^5.5.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
