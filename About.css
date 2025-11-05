@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: url("images/bg.jpg");
+  background-image: url("assets/images/bg.jpg");
   background-position: 50% 50%;
   min-height: 777px;
 }
@@ -52,7 +52,7 @@
 }
 
 .u-section-1 .u-image-1 {
-  background-image: url("images/hotel.jpg");
+  background-image: url("assets/images/hotel.jpg");
   min-height: 645px;
   background-position: 50% 50%;
 }
@@ -431,7 +431,7 @@
 
 .u-section-3 .u-image-1 {
   min-height: 633px;
-  background-image: url("images/reception2.jpg");
+  background-image: url("assets/images/reception2.jpg");
   background-position: 50% 50%;
 }
 
@@ -539,7 +539,7 @@
     min-height: 477px;
   }
 } .u-section-4 {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/she.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('assets/images/she.jpg');
   background-position: 50% 50%;
 }
 
@@ -600,7 +600,7 @@
     font-size: 2.25rem;
   }
 } .u-section-5 {
-  background-image: url("images/room5.jpg");
+  background-image: url("assets/images/room5.jpg");
   background-position: 50% 50%;
 }
 
@@ -719,7 +719,7 @@
 
 .u-section-6 .u-image-1 {
   min-height: 377px;
-  background-image: url("images/hotel.jpg");
+  background-image: url("assets/images/hotel.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -750,7 +750,7 @@
 
 .u-section-6 .u-image-2 {
   min-height: 381px;
-  background-image: url("images/hotel2.jpg");
+  background-image: url("assets/images/hotel2.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
@@ -765,7 +765,7 @@
 
 .u-section-6 .u-image-3 {
   min-height: 374px;
-  background-image: url("images/hotel6.jpg");
+  background-image: url("assets/images/hotel6.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -796,7 +796,7 @@
 
 .u-section-6 .u-image-4 {
   min-height: 374px;
-  background-image: url("images/hotel10.jpeg");
+  background-image: url("assets/images/hotel10.jpeg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
