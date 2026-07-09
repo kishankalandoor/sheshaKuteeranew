@@ -276,83 +276,12 @@
 
   function setupContactForm() {
     const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
     const submitBtn = document.getElementById('contact-submit-btn');
-    if (!form || !status || !submitBtn) return;
+    if (!form || !submitBtn) return;
 
-    function setStatus(type, message) {
-      if (!message) {
-        status.innerHTML = '';
-        return;
-      }
-      const ok = type === 'success';
-      status.innerHTML = '<div style="background:' + (ok ? 'rgba(0,229,160,0.1)' : 'rgba(255,80,80,0.1)') + ';border:1px solid ' + (ok ? 'rgba(0,229,160,0.3)' : 'rgba(255,80,80,0.3)') + ';border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:10px;color:' + (ok ? 'var(--color-accent-green)' : '#ff5050') + ';font-size:.9rem"><i class="bi ' + (ok ? 'bi-check-circle-fill' : 'bi-exclamation-circle-fill') + '"></i>' + message + '</div>';
-    }
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      setStatus('', '');
+    form.addEventListener('submit', function () {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
-
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-
-      // ============================================================
-      // Web3Forms — free form service, no email activation needed.
-      // Works perfectly on GitHub Pages static sites.
-      //
-      // SETUP (one time only):
-      //   1. Go to https://web3forms.com
-      //   2. Enter info@hitechpowers.com → click "Create Access Key"
-      //   3. Copy the key and paste it below replacing YOUR_ACCESS_KEY
-      // ============================================================
-      const mailPayload = new FormData();
-      mailPayload.append('access_key', '58186392-9e95-44a8-a2e2-208a084410af');
-      mailPayload.append('subject', 'New Fencing Quote Request: ' + (payload.subject || 'General Enquiry') + ' — ' + payload.name);
-      mailPayload.append('from_name', 'Hitech Power');
-      mailPayload.append('from_email', 'info@hitechpowers.com');
-      mailPayload.append('name', payload.name);
-      mailPayload.append('phone', payload.phone);
-      mailPayload.append('email', payload.email);
-      mailPayload.append('enquiry_type', payload.subject);
-      mailPayload.append('message', payload.message);
-      mailPayload.append('botcheck', '');
-
-      // ── Auto-reply to the enquirer ──────────────────────────────────
-      mailPayload.append('replyto', payload.email || '');
-      mailPayload.append('autoresponse', [
-        'Dear ' + (payload.name || 'Valued Customer') + ',',
-        '',
-        'Thank you for contacting Hitech Power.',
-        '',
-        'We appreciate your inquiry. Our team has received your message and will get back to you as soon as possible with the best solution for your requirements.',
-        '',
-        'Regards,',
-        'Hitech Power',
-        'info@hitechpowers.com',
-        'www.hitechpowers.com'
-      ].join('\n'));
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: mailPayload
-        });
-        const data = await response.json();
-        if (response.ok && data.success) {
-          setStatus('success', 'Message sent! We will contact you within 24 hours.');
-          form.reset();
-        } else {
-          setStatus('error', data.message || 'Something went wrong. Please try again or call us directly.');
-        }
-      } catch (error) {
-        console.error('Submission error:', error);
-        setStatus('error', 'Network error. Please check your connection and try again.');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="bi bi-send-fill"></i> Send Message';
-      }
     });
   }
 

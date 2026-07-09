@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hitech Power — Complete Electric Fence Solutions, Karnataka</title>
+  <meta name="description" content="Hitech Power is Karnataka's trusted supplier of complete electric fence systems." />
+  <meta name="keywords" content="electric fence, fence energizer, solar fence, electric fence Karnataka, Hitech Power" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" type="image/png" href="frontend/public/hitechlogo.png" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="#hero" class="navbar-logo" aria-label="Hitech Power Home">
+          <div class="navbar-logo-icon-wrap">
+            <img src="frontend/public/hitechlogo.png" alt="Hitech Power Logo" class="navbar-logo-img" width="160" height="160" />
+          </div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Hitech Power</span>
+            <span class="navbar-logo-tagline">India's Energizer Authority</span>
+          </div>
+        </a>
+
+        <ul class="navbar-nav" role="list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="navbar-cta">
+          <a href="#contact" class="btn btn-primary"><i class="bi bi-send-fill"></i> Get Quote</a>
+          <button class="hamburger" aria-label="Open mobile menu" id="hamburger-btn"><i class="bi bi-list"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#solutions" class="nav-link">Solutions</a>
+    <a href="#products" class="nav-link">Products</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+
+  <main id="main-content">
+    <section class="hero" id="hero" aria-label="Hero section">
+      <div class="hero-bg">
+        <video class="hero-video-bg" autoplay loop muted playsinline poster="frontend/public/hero.png" aria-hidden="true" id="hero-video">
+          <source src="frontend/public/banner.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-bg-overlay" id="hero-overlay"></div>
+      <div class="hero-bg-overlay-bottom"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge" aria-label="India's largest energizer distributor">
+            <div class="hero-pulse" aria-hidden="true"></div>
+            <i class="bi bi-patch-check-fill"></i>
+            India's Largest Energizer Distributor &amp; Agency
+          </div>
+
+          <h1 class="hero-title">Guard Every <span class="highlight">Boundary.</span><br />Across All <span class="highlight-gold">India.</span></h1>
+          <p class="hero-subtitle">
+            30+ years of expertise in AI-enabled electric fence systems, solar power
+            solutions and wild guard fencing. Protecting farms, forests and property
+            from elephant, lion, snake, monkey and all wildlife threats.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#solutions" class="btn btn-primary"><i class="bi bi-shield-fill-check"></i> View Fencing Solutions</a>
+            <a href="#contact" class="btn btn-outline"><i class="bi bi-telephone-fill"></i> Request a Quote</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Company highlights">
+            <div class="hero-stat"><div class="hero-stat-number"><span>30</span>+</div><div class="hero-stat-label">Years Experience</div></div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat"><div class="hero-stat-number"><span>110</span>+</div><div class="hero-stat-label">Products</div></div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat"><div class="hero-stat-number"><span>PAN</span></div><div class="hero-stat-label">India Service</div></div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat"><div class="hero-stat-number"><span>AI</span></div><div class="hero-stat-label">Fence Tech</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+    </section>
+
+    <div class="ticker-section-wrapper" aria-label="Company highlights marquee" aria-live="off">
+      <div class="ticker-scene-container">
+        <div class="ticker-glass-track scroll-left-container"><div class="ticker-scroller scroll-left" id="ticker-row-1"></div></div>
+        <div class="ticker-glass-track scroll-right-container" style="margin-top:20px"><div class="ticker-scroller scroll-right" id="ticker-row-2"></div></div>
+      </div>
+    </div>
+
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image-wrapper reveal">
+            <div class="about-image-frame">
+              <img src="frontend/public/about.png" alt="Hitech Power professional electric fence installation team at work" loading="lazy" />
+              <div class="about-image-glow" aria-hidden="true"></div>
+            </div>
+            <div class="about-badge-float">
+              <div class="about-badge-msme-wrap">
+                <img src="frontend/public/msme.jpeg" alt="MSME Ministry" style="width:64px;height:auto;object-fit:contain;mix-blend-mode:multiply" />
+              </div>
+              <div class="about-badge-text"><strong>MSME Recognized</strong><span>Ministry of MSME, Govt. of India</span></div>
+            </div>
+          </div>
+
+          <div class="about-content reveal reveal-delay-1">
+            <div class="section-label"><span>About Hitech Power</span></div>
+            <h2 class="section-title" id="about-heading">India's Electric Fence <span>Authority</span></h2>
+            <p class="section-subtitle">With over 30 years of expertise in electric fencing, solar power and AI-enabled security systems, Hitech Power is India's trusted name for complete fence solutions.</p>
+            <div class="about-highlights" id="about-highlights"></div>
+            <div role="list" aria-label="Company information" id="about-info"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-section" id="solutions" aria-labelledby="solutions-heading">
+      <div class="solutions-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="solutions-header reveal">
+          <div class="section-label"><span>Fencing Solutions</span></div>
+          <h2 class="section-title" id="solutions-heading">Every Threat. Every Terrain. <span>One Solution.</span></h2>
+          <p class="section-subtitle" style="margin:0 auto">From elephant conflict zones to snake guards, Hitech Power designs and installs solutions across India.</p>
+        </div>
+        <div class="solutions-grid" id="solutions-grid"></div>
+      </div>
+    </section>
+
+    <section class="partners-section" id="partners" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="trust-strip reveal" id="trust-strip"></div>
+        <div class="partners-header reveal">
+          <div class="section-label"><span>Our Partners &amp; Recognition</span></div>
+          <h2 class="section-title" id="partners-heading">Trusted by <span>Industry Leaders</span></h2>
+          <p class="section-subtitle" style="margin:0 auto;margin-bottom:40px">Hitech Power works with India's leading brands to supply and install advanced electric fencing and power solutions.</p>
+        </div>
+      </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-container" dir="ltr"><div class="marquee-track scroll-left" id="partners-row-1"></div></div>
+        <div class="marquee-container" dir="ltr" style="margin-top:24px"><div class="marquee-track scroll-right" id="partners-row-2"></div></div>
+      </div>
+    </section>
+
+    <section class="products" id="products" aria-labelledby="products-heading">
+      <div class="container">
+        <div class="products-header">
+          <div class="section-label"><span>Our Product Catalog</span></div>
+          <h2 class="section-title" id="products-heading">110+ Products Across <span>9 Categories</span></h2>
+          <p class="section-subtitle">Everything you need for a complete electric fence installation.</p>
+        </div>
+        <div class="products-filter" role="group" aria-label="Filter products by category" id="products-filter"></div>
+        <div class="products-grid" role="list" id="products-grid"></div>
+      </div>
+    </section>
+
+    <section class="why-us" id="why-us" aria-labelledby="why-us-heading">
+      <div class="container">
+        <div class="why-us-grid">
+          <div class="reveal">
+            <div class="section-label"><span>Why Choose Us</span></div>
+            <h2 class="section-title" id="why-us-heading">Built for <span>Real Field</span> Conditions</h2>
+            <p class="section-subtitle">Hitech Power understands the unique challenges of electric fencing across India's diverse terrains.</p>
+            <div class="why-us-features" id="why-features"></div>
+          </div>
+          <div class="why-us-visual reveal reveal-delay-2">
+            <div class="why-us-image-frame"><img src="frontend/public/cat-solar.png" alt="Hitech Power solar electric fence system" loading="lazy" /></div>
+            <div class="why-us-stat-cards" aria-label="Key statistics">
+              <div class="stat-card-float"><strong>30+</strong><span>Years expertise</span></div>
+              <div class="stat-card-float"><strong>110+</strong><span>Products in stock</span></div>
+              <div class="stat-card-float"><strong>9</strong><span>Product categories</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="services-header reveal">
+          <div class="section-label"><span>What We Offer</span></div>
+          <h2 class="section-title" id="services-heading">Professional <span>Services</span></h2>
+          <p class="section-subtitle" style="margin:0 auto">From site assessment to final commissioning and logistics.</p>
+        </div>
+        <div class="services-grid" id="services-grid"></div>
+      </div>
+    </section>
+
+    <section class="certifications" id="certifications" aria-labelledby="cert-heading">
+      <div class="container">
+        <div class="cert-cta-banner reveal">
+          <div class="cert-cta-content">
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap">
+              <div class="about-badge-msme-wrap" style="flex-shrink:0">
+                <img src="frontend/public/msme.jpeg" alt="MSME Recognized" style="height:56px;width:auto;object-fit:contain;mix-blend-mode:multiply;display:block" />
+              </div>
+              <div>
+                <div style="font-size:.75rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:2px">GST Registered - All India Operations</div>
+                <div style="font-size:1rem;font-weight:700;color:var(--color-electric);letter-spacing:.04em">GSTIN: 29ADQPV4208E1Z6</div>
+              </div>
+            </div>
+            <h2 id="cert-heading">Ready to Secure Your Property?</h2>
+            <p>Get a custom quote for your electric fence project.</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap">
+            <a href="#contact" class="btn btn-primary"><i class="bi bi-send-fill"></i> Get Free Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="section-label"><span>Get In Touch</span></div>
+            <h2 class="section-title" id="contact-heading">Let's Discuss Your <span>Project</span></h2>
+            <p class="section-subtitle">Reach out for a free consultation, product recommendations or custom quotation.</p>
+
+            <div class="contact-info" aria-label="Contact information">
+              <div class="contact-info-item"><div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div><div class="contact-info-text"><strong>Address</strong><span>I-293, Kalandoor, Subramanya<br />Dakshina Kannada, Karnataka - 574238</span></div></div>
+              <div class="contact-info-item"><div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div><div class="contact-info-text"><strong>Email</strong><a href="mailto:info@hitechpowers.com">info@hitechpowers.com</a></div></div>
+            </div>
+          </div>
+
+          <div class="contact-form-card reveal reveal-delay-2">
+            <h3>Request a <span style="background:var(--grad-electric);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Free Quote</span></h3>
+            <p>Fill in your details and we'll get back to you within 24 hours.</p>
+            <div id="form-status"></div>
+            <form id="contact-form" action="https://formsubmit.co/info@hitechpowers.com" method="POST" aria-label="Contact form">
+              <input type="hidden" name="_subject" value="New Fencing Quote Request - Website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_autoresponse" value="Thank you for contacting Hitech Power.
+
+We appreciate your inquiry. Our team has received your message and will get back to you as soon as possible with the best solution for your requirements.
+
+Regards,
+Hitech Power
+info@hitechpowers.com
+www.hitechpowers.com">
+              <input type="hidden" name="_next" value="https://hitechpowers.com/#contact">
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="contact-name">Full Name</label><input id="contact-name" name="name" type="text" class="form-control" required /></div>
+                <div class="form-group"><label class="form-label" for="contact-phone">Phone</label><input id="contact-phone" name="phone" type="tel" class="form-control" required /></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="contact-email">Email Address</label><input id="contact-email" name="email" type="email" class="form-control" /></div>
+              <div class="form-group"><label class="form-label" for="contact-subject">Subject</label>
+                <select id="contact-subject" name="subject" class="form-control">
+                  <option value="">Select enquiry type</option><option value="product">Product Enquiry</option><option value="quote">Request Quote</option><option value="installation">Installation Service</option><option value="solar">Solar Fence Setup</option><option value="support">After-Sales Support</option><option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label" for="contact-message">Message</label><textarea id="contact-message" name="message" class="form-control" rows="5" required></textarea></div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="contact-submit-btn"><i class="bi bi-send-fill"></i> Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo" id="footer">
+    <div class="footer-aura" id="footer-aura" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-giant-header">HITECH POWER</div>
+      <div class="footer-awwwards-grid">
+        <div class="footer-newsletter-block">
+          <h3 class="footer-newsletter-title">Sign up for our newsletter to get product updates and technical security bulletins.</h3>
+          <form class="footer-newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="email address" class="footer-newsletter-input" id="newsletter-email" required />
+            <button type="submit" class="footer-newsletter-submit" id="newsletter-submit">Submit</button>
+          </form>
+        </div>
+        <div class="footer-nav-column">
+          <h4 class="footer-nav-title">Navigation</h4>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="#about">About Us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#products">Products</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-column">
+          <h4 class="footer-nav-title">Connect</h4>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="mailto:info@hitechpowers.com" class="footer-social-link"><i class="bi bi-envelope-fill"></i> Email Mail</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+      <div class="footer-offices-row">
+        <div class="footer-office-col"><span class="footer-office-label">Corporate Office</span><p class="footer-office-address">Flat/Door/Block No. I-293<br />Kalandoor Building, Subramanya<br />Dakshina Kannada, Karnataka - 574238</p></div>
+        <div class="footer-office-col"><span class="footer-office-label">Registrations &amp; Badges</span><p class="footer-office-address">GSTIN: 29ADQPV4208E1Z6<br />Ministry of MSME Recognized<br />All India Energizer Authority</p></div>
+        <div class="footer-office-col"><span class="footer-office-label">Consultations &amp; Support</span><p class="footer-office-address">Free Site Survey &amp; Quotation<br />AI Fence Alert Monitoring Integration<br />30+ Years Industry Expertise</p></div>
+      </div>
+
+      <div class="footer-very-bottom">
+        <span class="footer-copy">&copy; <span id="footer-year"></span> Hitech Power. All Rights Reserved.</span>
+        <div class="footer-policy-links"><span>Privacy Policy</span><span class="footer-dot-separator"></span><span>Terms of Service</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hard-coded config — no PHP needed
+    window.SITE_CONFIG = {
+      apiBase: 'backend',
+      assetBase: 'frontend/public'
+    };
+    // Dynamic year — no PHP needed
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/site.js"></script>
+</body>
+</html>
