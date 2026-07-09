@@ -308,15 +308,32 @@
       //   3. Copy the key and paste it below replacing YOUR_ACCESS_KEY
       // ============================================================
       const mailPayload = {
-        access_key: 'YOUR_ACCESS_KEY',
+        access_key: '58186392-9e95-44a8-a2e2-208a084410af',
         subject: 'New Fencing Quote Request: ' + (payload.subject || 'General Enquiry') + ' — ' + payload.name,
-        from_name: 'Hitech Power Website',
+        from_name: 'Hitech Power',
+        from_email: 'info@hitechpowers.com',
         name: payload.name,
         phone: payload.phone,
         email: payload.email,
         enquiry_type: payload.subject,
         message: payload.message,
-        botcheck: ''
+        botcheck: '',
+
+        // ── Auto-reply to the enquirer ──────────────────────────────────
+        // Web3Forms sends this back to the address in payload.email
+        replyto: payload.email || '',
+        autoresponse: [
+          'Dear ' + (payload.name || 'Valued Customer') + ',',
+          '',
+          'Thank you for contacting Hitech Power.',
+          '',
+          'We appreciate your inquiry. Our team has received your message and will get back to you as soon as possible with the best solution for your requirements.',
+          '',
+          'Regards,',
+          'Hitech Power',
+          'info@hitechpowers.com',
+          'www.hitechpowers.com'
+        ].join('\n')
       };
 
       try {
