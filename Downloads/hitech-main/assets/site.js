@@ -307,43 +307,37 @@
       //   2. Enter info@hitechpowers.com → click "Create Access Key"
       //   3. Copy the key and paste it below replacing YOUR_ACCESS_KEY
       // ============================================================
-      const mailPayload = {
-        access_key: '58186392-9e95-44a8-a2e2-208a084410af',
-        subject: 'New Fencing Quote Request: ' + (payload.subject || 'General Enquiry') + ' — ' + payload.name,
-        from_name: 'Hitech Power',
-        from_email: 'info@hitechpowers.com',
-        name: payload.name,
-        phone: payload.phone,
-        email: payload.email,
-        enquiry_type: payload.subject,
-        message: payload.message,
-        botcheck: '',
+      const mailPayload = new FormData();
+      mailPayload.append('access_key', '58186392-9e95-44a8-a2e2-208a084410af');
+      mailPayload.append('subject', 'New Fencing Quote Request: ' + (payload.subject || 'General Enquiry') + ' — ' + payload.name);
+      mailPayload.append('from_name', 'Hitech Power');
+      mailPayload.append('from_email', 'info@hitechpowers.com');
+      mailPayload.append('name', payload.name);
+      mailPayload.append('phone', payload.phone);
+      mailPayload.append('email', payload.email);
+      mailPayload.append('enquiry_type', payload.subject);
+      mailPayload.append('message', payload.message);
+      mailPayload.append('botcheck', '');
 
-        // ── Auto-reply to the enquirer ──────────────────────────────────
-        // Web3Forms sends this back to the address in payload.email
-        replyto: payload.email || '',
-        autoresponse: [
-          'Dear ' + (payload.name || 'Valued Customer') + ',',
-          '',
-          'Thank you for contacting Hitech Power.',
-          '',
-          'We appreciate your inquiry. Our team has received your message and will get back to you as soon as possible with the best solution for your requirements.',
-          '',
-          'Regards,',
-          'Hitech Power',
-          'info@hitechpowers.com',
-          'www.hitechpowers.com'
-        ].join('\n')
-      };
+      // ── Auto-reply to the enquirer ──────────────────────────────────
+      mailPayload.append('replyto', payload.email || '');
+      mailPayload.append('autoresponse', [
+        'Dear ' + (payload.name || 'Valued Customer') + ',',
+        '',
+        'Thank you for contacting Hitech Power.',
+        '',
+        'We appreciate your inquiry. Our team has received your message and will get back to you as soon as possible with the best solution for your requirements.',
+        '',
+        'Regards,',
+        'Hitech Power',
+        'info@hitechpowers.com',
+        'www.hitechpowers.com'
+      ].join('\n'));
 
       try {
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(mailPayload)
+          body: mailPayload
         });
         const data = await response.json();
         if (response.ok && data.success) {
@@ -353,6 +347,7 @@
           setStatus('error', data.message || 'Something went wrong. Please try again or call us directly.');
         }
       } catch (error) {
+        console.error('Submission error:', error);
         setStatus('error', 'Network error. Please check your connection and try again.');
       } finally {
         submitBtn.disabled = false;
