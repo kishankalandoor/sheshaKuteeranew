@@ -2094,7 +2094,7 @@
 .u-section-2 .u-list-item-9.u-list-item-9.u-list-item-9.hover {
   box-shadow: 2px 2px 20px 10px rgba(0,0,0,1) !important;
 } .u-section-3 {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('images/out.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('assets/images/out.jpg');
 }
 
 .u-section-3 .u-sheet-1 {
@@ -2732,7 +2732,7 @@
 
 .u-section-4 .u-image-1 {
   min-height: 377px;
-  background-image: url("images/hotel.jpg");
+  background-image: url("assets/images/hotel.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -2763,7 +2763,7 @@
 
 .u-section-4 .u-image-2 {
   min-height: 381px;
-  background-image: url("images/hotel2.jpg");
+  background-image: url("assets/images/hotel2.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
@@ -2778,7 +2778,7 @@
 
 .u-section-4 .u-image-3 {
   min-height: 374px;
-  background-image: url("images/hotel6.jpg");
+  background-image: url("assets/images/hotel6.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -2809,7 +2809,7 @@
 
 .u-section-4 .u-image-4 {
   min-height: 374px;
-  background-image: url("images/hotel10.jpeg");
+  background-image: url("assets/images/hotel10.jpeg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
