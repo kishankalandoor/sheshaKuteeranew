@@ -778,9 +778,36 @@ Interactive docs: `http://localhost:4209/docs` (Swagger UI)
 
 ## Grafana Dashboard
 
-Access at **http://localhost:3000** — login: `admin` / `admin`
+### Where Grafana Runs
 
-The **PlateVision — System Monitoring** dashboard is automatically loaded on first boot. Panels include:
+> ⚠️ **Grafana only runs locally via Docker Compose. It is NOT included in the Render free-tier deployment.**  
+> On Render, only the FastAPI backend is hosted. Prometheus, Grafana, cAdvisor, and Node Exporter require a self-hosted or always-on environment.
+
+| Service | Local Docker | Render (cloud) |
+|---|---|---|
+| FastAPI API | `localhost:4209/api` | ✅ `platevision-api.onrender.com` |
+| Frontend UI | `localhost:4209` | ✅ `platevision-api.onrender.com` |
+| **Grafana** | `localhost:3000` | ❌ Not deployed |
+| Prometheus | Internal only | ❌ Not deployed |
+| cAdvisor | Internal only | ❌ Not deployed |
+
+---
+
+### Option 1 — Access Locally (Docker)
+
+```bash
+# Start the full stack (all 6 containers including Grafana)
+docker compose up -d
+
+# Open in browser
+open http://localhost:3000
+```
+
+- **URL:** `http://localhost:3000`
+- **Username:** `admin`
+- **Password:** `admin`
+
+The **PlateVision — System Monitoring** dashboard loads automatically. Panels include:
 
 | Panel | Metric Source | What It Shows |
 |---|---|---|
@@ -798,6 +825,28 @@ The **PlateVision — System Monitoring** dashboard is automatically loaded on f
 | Error Rate (stat) | FastAPI /metrics | 5xx rate as percentage |
 
 ---
+
+### Option 2 — Grafana Cloud (Free, Always-On ☁️)
+
+[grafana.com/products/cloud](https://grafana.com/products/cloud/) — **free forever** plan:
+- 10,000 metric series
+- 14-day retention
+- Full dashboards accessible from any browser
+
+**Setup steps:**
+1. Sign up at [grafana.com](https://grafana.com)
+2. Create a stack → copy the **Remote Write URL + API key**
+3. Add to your Render environment variables:
+   ```
+   PROMETHEUS_REMOTE_WRITE_URL = https://prometheus-blocks-prod-us-central1.grafana.net/api/prom/push
+   PROMETHEUS_REMOTE_WRITE_USER = <your-user-id>
+   PROMETHEUS_REMOTE_WRITE_PASSWORD = <your-api-key>
+   ```
+4. Your FastAPI `/metrics` endpoint pushes to Grafana Cloud automatically
+5. Dashboards are available 24/7 from any browser — no Docker needed
+
+---
+
 
 ## Project Structure
 
