@@ -579,3 +579,76 @@ Metrics power the pre-built **Grafana dashboard** at `http://localhost:3000` (lo
 ---
 
 *Part of the [PlateVision](../README.md) full-stack vehicle image intelligence pipeline.*
+
+---
+
+## Live Deployment Output
+
+> **Deployed at:** [`https://platevision-api.onrender.com`](https://platevision-api.onrender.com)  
+> **Platform:** Render Free Tier · Python 3 · Singapore Region  
+> **Repo:** [`prabhodabayadi/number_plate`](https://github.com/prabhodabayadi/number_plate)
+
+---
+
+### Render — First Deploy (Build Logs)
+
+Service `platevision-api` building from `prabhodabayadi / number_plate @ main`, showing live pip install logs for `numpy`, `google-generativeai`, `ImageHash`, and other dependencies.
+
+![Render Deploy Build Logs](image/README/render-deploy.jpeg)
+
+---
+
+### Health Endpoint — `GET /api/health`
+
+#### JSON View
+Structured JSON response confirming the API is live with Gemini configured and queue ready.
+
+![Health Endpoint JSON](image/README/health-json.jpeg)
+
+#### Raw Response
+```json
+{"status":"ok","queue_depth":0,"worker_concurrency":2,"gemini_configured":true}
+```
+
+![Health Endpoint Raw](image/README/health-raw.jpeg)
+
+#### Pretty Printed
+![Health Endpoint Pretty](image/README/health-pretty.jpeg)
+
+---
+
+### PlateVision Dashboard — Live UI on Render
+
+Full dashboard running at `platevision-api.onrender.com` — upload zone, processing jobs table, and side panel showing extracted plate `MH12NW8556` with all 7 checks passed.
+
+![PlateVision UI Live](image/README/platevision-ui.jpeg)
+
+---
+
+### Sample Analysis Results (Live)
+
+The following results were produced by the live Render deployment:
+
+#### Result 1
+![Plate Analysis Result 1](image/README/plate-result-1.jpeg)
+
+#### Result 2
+![Plate Analysis Result 2](image/README/plate-result-2.jpeg)
+
+#### Result 3
+![Plate Analysis Result 3](image/README/plate-result-3.jpeg)
+
+---
+
+### Summary
+
+| Check | `image_1.jpeg` |
+|---|---|
+| Number Plate | **MH12NW8556** |
+| Status | ✅ COMPLETED |
+| Blur Detection | 95% |
+| Brightness Analysis | 90% |
+| Duplicate Detection | 97% |
+| Dimension Validation | 100% |
+| All Checks | **Passed** |
+
