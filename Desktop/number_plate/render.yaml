@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: platevision-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: DB_PATH
+        value: /var/data/jobs.db
+      - key: MAX_FILE_SIZE_MB
+        value: "20"
+      - key: WORKER_CONCURRENCY
+        value: "1"
+      - key: HOST
+        value: "0.0.0.0"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    disk:
+      name: platevision-data
+      mountPath: /var/data
+      sizeGB: 1
