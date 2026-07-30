@@ -448,7 +448,7 @@
 
 .u-section-3 .u-image-1 {
   min-height: 377px;
-  background-image: url("images/hotel.jpg");
+  background-image: url("assets/images/hotel.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -479,7 +479,7 @@
 
 .u-section-3 .u-image-2 {
   min-height: 381px;
-  background-image: url("images/hotel2.jpg");
+  background-image: url("assets/images/hotel2.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
@@ -494,7 +494,7 @@
 
 .u-section-3 .u-image-3 {
   min-height: 374px;
-  background-image: url("images/hotel6.jpg");
+  background-image: url("assets/images/hotel6.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -525,7 +525,7 @@
 
 .u-section-3 .u-image-4 {
   min-height: 374px;
-  background-image: url("images/hotel10.jpeg");
+  background-image: url("assets/images/hotel10.jpeg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;

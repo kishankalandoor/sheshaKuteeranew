@@ -160,7 +160,7 @@
 
 .u-section-2 .u-image-1 {
   min-height: 371px;
-  background-image: url("images/room1.jpg");
+  background-image: url("assets/images/room1.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 100px;
   --animation-custom_in-translate_y: 0px;
@@ -175,7 +175,7 @@
 
 .u-section-2 .u-image-2 {
   min-height: 318px;
-  background-image: url("images/room5.jpg");
+  background-image: url("assets/images/room5.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -190,7 +190,7 @@
 
 .u-section-2 .u-image-3 {
   min-height: 318px;
-  background-image: url("images/corridor.jpg");
+  background-image: url("assets/images/corridor.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -477,7 +477,7 @@
     padding-right: 20px;
   }
 } .u-section-4 {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('images/hotel.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('assets/images/hotel.jpg');
   background-position: 50% 50%;
 }
 
@@ -1363,7 +1363,7 @@
 
 .u-section-5 .u-image-3 {
   min-height: 565px;
-  background-image: url("images/staff.jpg");
+  background-image: url("assets/images/staff.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 100px;
@@ -2277,7 +2277,7 @@
     padding-right: 20px;
   }
 } .u-section-8 {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/tv.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/images/tv.jpg');
   background-position: 50% 50%;
 }
 
@@ -2477,7 +2477,7 @@
 
 .u-section-9 .u-image-1 {
   min-height: 629px;
-  background-image: url("images/lobby3.jpg");
+  background-image: url("assets/images/lobby3.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -2653,7 +2653,7 @@
 
 .u-section-10 .u-image-1 {
   min-height: 377px;
-  background-image: url("images/room1.jpg");
+  background-image: url("assets/images/room1.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -2684,7 +2684,7 @@
 
 .u-section-10 .u-image-2 {
   min-height: 381px;
-  background-image: url("images/room2.jpg");
+  background-image: url("assets/images/room2.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
@@ -2699,7 +2699,7 @@
 
 .u-section-10 .u-image-3 {
   min-height: 374px;
-  background-image: url("images/room4.jpg");
+  background-image: url("assets/images/room4.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
@@ -2730,7 +2730,7 @@
 
 .u-section-10 .u-image-4 {
   min-height: 374px;
-  background-image: url("images/tv.jpg");
+  background-image: url("assets/images/tv.jpg");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
